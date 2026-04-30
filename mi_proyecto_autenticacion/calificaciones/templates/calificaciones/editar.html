@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Formulario</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light d-flex justify-content-center align-items-center vh-100">
+
+<div class="card shadow p-4" style="width: 450px;">
+
+    <h3 class="text-center mb-3">📝 Registro de calificación</h3>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="mb-2">
+            <label>Nombre del estudiante</label>
+            {{ form.nombre_estudiante }}
+        </div>
+
+        <div class="mb-2">
+            <label>Identificación</label>
+            {{ form.identificacion }}
+        </div>
+
+        <div class="mb-2">
+            <label>Asignatura</label>
+            {{ form.asignatura }}
+        </div>
+
+        <div class="mb-2">
+            <label>Nota 1</label>
+            {{ form.nota1 }}
+        </div>
+
+        <div class="mb-2">
+            <label>Nota 2</label>
+            {{ form.nota2 }}
+        </div>
+
+        <div class="mb-2">
+            <label>Nota 3</label>
+            {{ form.nota3 }}
+        </div>
+
+        <button class="btn btn-primary w-100 mt-3">💾 Guardar</button>
+    </form>
+
+    <hr>
+
+    <a href="{% url 'listar' %}" class="btn btn-outline-secondary w-100">
+        ← Volver
+    </a>
+
+</div>
+
+</body>
+</html>
