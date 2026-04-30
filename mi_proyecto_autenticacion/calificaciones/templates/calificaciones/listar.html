@@ -4,8 +4,10 @@
 <h2>Calificaciones</h2>
 
 <a href="{% url 'crear' %}" class="btn btn-success">Nueva</a>
-<a href="{% url 'logout' %}" class="btn btn-danger">Salir</a>
-
+<form action="{% url 'logout' %}" method="post" style="display:inline;">
+    {% csrf_token %}
+    <button class="btn btn-danger">Cerrar sesión</button>
+</form>
 <table class="table table-striped mt-3">
 <tr>
 <th>Nombre</th><th>Notas</th><th>Promedio</th><th>Acciones</th>
