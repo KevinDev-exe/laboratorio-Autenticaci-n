@@ -30,7 +30,14 @@ ALLOWED_HOSTS = []
 LOGIN_REDIRECT_URL = 'listar'
 LOGOUT_REDIRECT_URL = 'login'
 LOGIN_URL = 'login'
-# Application definition
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = 'kevinyamid2005@gmail.com'
+EMAIL_HOST_PASSWORD = 'csoq htse lqfi uohp'# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -57,7 +64,7 @@ ROOT_URLCONF = 'mi_proyecto_autenticacion.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -67,6 +74,10 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
 ]
 
 WSGI_APPLICATION = 'mi_proyecto_autenticacion.wsgi.application'

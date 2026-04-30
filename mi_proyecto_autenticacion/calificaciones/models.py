@@ -1,6 +1,9 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Calificacion(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)  # 🔥 CLAVE
+
     nombre_estudiante = models.CharField(max_length=150)
     identificacion = models.CharField(max_length=15)
     asignatura = models.CharField(max_length=100)
